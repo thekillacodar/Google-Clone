@@ -1,6 +1,6 @@
 const searchInput = document.getElementById('search-input');
 const list = document.getElementById('list');
-const people = []; // assume this is populated elsewhere
+const people = []; // define or populate the people array
 
 function clearList() {
   while (list.firstChild) {
@@ -8,19 +8,25 @@ function clearList() {
   }
 }
 
-searchInput.addEventListener('input', (e) => {
-  let value = e.target.value.trim().toLowerCase();
+searchInput.addEventListener("input", (e) => {
+  let value = e.target.value;
 
-  if (value.length > 0) {
-    setList(people.filter(person => person.name.includes(value)));
+  if (value && value.trim().length > 0) {
+    value = value.trim().toLowerCase();
+
+    const filteredPeople = people.filter(person => {
+      return person.name.includes(value);
+    });
+
+    setList(filteredPeople);
   } else {
     clearList();
   }
 });
 
-function setList(filteredPeople) {
+function setList(people) {
   clearList();
-  filteredPeople.forEach(person => {
+  people.forEach(person => {
     const listItem = document.createElement('li');
     const text = document.createTextNode(person.name);
     listItem.appendChild(text);
@@ -36,14 +42,14 @@ function noResults() {
   list.appendChild(error);
 }
 
-document.getElementById('search-btn').addEventListener('click', () => {
-  const query = searchInput.value.trim();
-  window.open(`https://www.google.com/search?q=${query}`);
+document.getElementById('search-btn').addEventListener('click', function() {
+  const query = searchInput.value;
+  window.location.href = `https://www.google.com/search?q=${query}`; // open in same tab
 });
 
-document.addEventListener('keydown', (event) => {
+document.getElementById('body').addEventListener('keydown', function(event) {
   if (event.keyCode === 13) {
-    const query = searchInput.value.trim();
-    window.open(`https://www.google.com/search?q=${query}`);
+    const query = searchInput.value;
+    window.location.href = `https://www.google.com/search?q=${query}`; // open in same tab
   }
 });
