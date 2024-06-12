@@ -1,0 +1,46 @@
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    width: auto;
+   }
+   
+   .body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+   }
+   
+   h1{
+    text-align:center;
+    margin-top: 15%;
+    font-size: 400%; 
+}
+
+   .search-box {
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   
+   #search-input {
+    border-radius: 50PX;
+    width: 400px;
+    height: 30px;
+    padding: 5px;
+    text-align: center;
+    border: none;
+    box-shadow: 0 0 1px;
+    outline: none;
+   }
+   
+   #search-btn {
+    margin-left: 10px;
+    height: 30px;
+    cursor: pointer;
+    background-color: brown;
+    border: none;
+    border-radius: 50PX;
+    color: white;
+   }
+
+   
