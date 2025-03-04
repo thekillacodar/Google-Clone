@@ -50,6 +50,6 @@ document.getElementById('search-btn').addEventListener('click', function() {
 document.getElementById('body').addEventListener('keydown', function(event) {
   if (event.keyCode === 13) {
     const query = searchInput.value;
-    window.location.href = `https://www.google.com/search?q=${query}`; // open in same tab
+    window.location.href = `https://www.google.com/search?q=${query}`; // open in same tab omo ehhhaisjj
   }
 });
